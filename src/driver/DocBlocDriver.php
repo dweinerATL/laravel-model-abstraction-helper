@@ -30,7 +30,7 @@ class DocBlocDriver implements DriverInterface {
       $name = $column->getVariableName();
 
       if (isset($name)) {
-        $columns = new Column($name, $column->getType()->__toString());
+        $columns[] = new Column($name, $column->getType()->__toString());
       }
     }
 
