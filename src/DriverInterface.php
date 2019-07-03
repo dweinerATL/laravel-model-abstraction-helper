@@ -10,6 +10,8 @@ use \Illuminate\Database\Eloquent\model as Eloquent;
 interface DriverInterface {
 
   /**
+   * Process the model and return an array of Dweineratl\LaravelModelHelper\Column objects
+   *
    * @param \Illuminate\Database\Eloquent\model $model
    *
    * @return array
