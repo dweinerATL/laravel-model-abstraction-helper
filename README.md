@@ -199,7 +199,11 @@ To support other methods of obtaining the columns for a model, _Laravel Model Ab
 are in the `Dweineratl\LaravelModelHelper\Driver` namespace, and the class name is value of `config('database.default')` 
 concated with 'Driver' and in PascalCase (i.e, `Dweineratl\LaravelModelHelper\Driver\CouchdbDriver`).  It must implement 
 the `Dweineratl\LaravelModelHelper\DriverInterface` at a minimum, providing the `getColumns()` method that returns an 
-array of `Dweineratl\LaravelModelHelper\Column` objects.
+array of `Dweineratl\LaravelModelHelper\Column` objects.  `ModelAbstractionFactory` will first check if the model supports
+Doctrine.  If it does not support Doctrine, it will then get the value of the default database driver using `config('database.default')`
+and check if a custom driver for that database exists.  If it does not, it will then check to see if the model has a
+suitable DocBlock.  Finally, if none of the previous drivers are usable, the default fallback of using the `$fillable` 
+array will be used.
 
 ### License
 
