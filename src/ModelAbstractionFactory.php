@@ -16,7 +16,7 @@ class ModelAbstractionFactory {
    * @throws \ReflectionException
    */
   public static function create($model) {
-    $hasDoctrine = method_exists($model, 'getDoctrineSchemaManager');
+    $hasDoctrine = method_exists($model->getConnection(), 'getDoctrineDriver');
 
     if ($hasDoctrine) {
       return new DoctrineDriver($model);
