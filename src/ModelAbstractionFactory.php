@@ -34,6 +34,10 @@ class ModelAbstractionFactory {
     }
   }
 
+  public static function getColumns($model) {
+      return self::create($model)->getColumns($model);
+  }
+
   /**
    * Does this model have a DocBlock?
    *
