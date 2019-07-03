@@ -1,0 +1,23 @@
+{
+  "name": "dweineratl/laravel-model-abstraction-helper",
+  "description": "Not every Laravel model supports Doctrine.  This is a helper to abstract getting information from models",
+  "keywords": ["Laravel", "Model", "Abstraction"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dave Weiner",
+      "email": "David.L.Weiner30030@gmail.com",
+      "role": "Primary Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "doctrine/dbal": "~2.3",
+    "phpdocumentor/reflection-docblock": "^4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dweineratl\\LaravelModelHelper\\": "src/"
+    }
+  }
+}
